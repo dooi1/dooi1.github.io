@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-
-<script>
-    if (window.location.pathname.endsWith(".html")) {
-        const newUrl = window.location.pathname.replace(".html", "");
-        window.history.replaceState(null, "", newUrl);
-    }
-</script>
-
 <html lang="en">
 
   <head>
@@ -16,10 +8,11 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <title>Designer - Creative HTML5 Template</title>
+    <title>Designer Template - Assignments Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -70,7 +63,7 @@ https://templatemo.com/tm-572-designer
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" href="index.html">Homepage</a>
+                  <a class="nav-link" href="index.html">Homepage</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="work-experience.html">Work Experience</a>
@@ -79,7 +72,7 @@ https://templatemo.com/tm-572-designer
                   <a class="nav-link" href="projects.html">Projects</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="assignments.html">Assignments</a>
+                  <a class="nav-link active" href="assignments.html">Assignments</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact Us</a>
@@ -89,45 +82,21 @@ https://templatemo.com/tm-572-designer
           </div>
       </nav>
 
-  </header>
+    </header>
 
- 
+    <div class="page-banner change-name">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="header-text">
+                        <h2><em>Check</em> Trending Work</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod keoi tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-  <section class="whats-trending">
-      <div class="container expanded">
-          <div class="row">
-              <div class="col-lg-6 align-self-center">
-                  <div class="section-heading">
-                      <h2>About Me<br><em>Daniel Ooi</em></h2>
-                  </div>
-                  <div class="left-content">
-                      <p>Hello! My name is Daniel Ooi, and I'm from Queens, NY. I'm currently studying Computer Science with a minor in Hospitality at Boston University. My academic journey has been a fascinating blend of technology and service, fields that might seem distinct but come together in intriguing ways for me. 
-                    </p>
-                    <p>I’m passionate about leveraging technology to create seamless and engaging user experiences, and I also value the human touch in hospitality. Whether it’s developing innovative software solutions or ensuring exceptional guest experiences, I believe in the power of integrating these two worlds. </p>
-                    <p>When I’m not in the classroom, you might find me swimming laps, experimenting in the kitchen, or exploring local coffee shops in search of the perfect brew. 
-                    </p>
-                    <p>Feel free to reach out if you’re interested in discussing tech, hospitality, or anything in between!</p>
-                    <div class="primary-button">
-    
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-4">
-                  <div class="right-image">
-                      <div class="thumb">
-                          <div class="hover-effect">
-                              <div class="inner-content">
-                                  
-                              </div>
-                          </div>
-                          <img src="assets/images/whats-trending-item-image.jpg" alt="">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -139,17 +108,32 @@ https://templatemo.com/tm-572-designer
 
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/popup.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
   <script src="assets/js/custom.js"></script>
   <script>
-    setTimeout(function(){
-        $('.loader').fadeToggle();
-    }, 1500);
-	
-	$("a[href='#top']").click(function() {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
-  </script>
+        setTimeout(function(){
+            $('.loader').fadeToggle();
+        }, 2000);
+		
+		$("a[href='#top']").click(function() {
+        	$("html, body").animate({ scrollTop: 0 }, "slow");
+        	return false;
+        });
+        
+        var elem = document.querySelector('.grid');
+            var iso = new Isotope( elem, {
+            // options
+            itemSelector: '.grid-item',
+            layoutMode: 'masonry'
+        });
+        
+        imagesLoaded( document.querySelector('.grid'), function( instance ) {
+            var iso = new Isotope( '.grid', {
+                itemSelector: '.grid-item',
+            });
+        });
+    </script>
 
 </body>
 </html>
